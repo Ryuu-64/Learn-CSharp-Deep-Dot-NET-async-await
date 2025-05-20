@@ -1,48 +1,32 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Collections.Concurrent;
+namespace Learn_CSharp_Deep_Dot_NET_async_await;
 
-for (int i = 0; i < 1000; i++)
+public static class Program
 {
-    int capturedInt = i;
-    MyThreadPool.QueueUserWorkItem(_ =>
+    public static void Main()
     {
-        Console.WriteLine(capturedInt);
-        Thread.Sleep(1000);
-    });
-}
+        // List<MyTask> tasks = [];
+        // AsyncLocal<int> asyncLocalValue = new();
+        // for (var i = 0; i < 100; i++)
+        // {
+        //     asyncLocalValue.Value = i;
+        //     tasks.Add(MyTask.Run(() =>
+        //     {
+        //         Console.WriteLine(asyncLocalValue.Value);
+        //         Thread.Sleep(1000);
+        //     }));
+        // }
+        // MyTask.WhenAll(tasks).Wait();
 
-Console.WriteLine("Hello, World!");
-
-static class MyThreadPool
-{
-    private static readonly BlockingCollection<(Action<object?>, ExecutionContext?)> WorkItems = new();
-
-    public static void QueueUserWorkItem((Action<object?>, ExecutionContext?) action)
-    {
-        WorkItems.Add(action);
-    }
-
-    static MyThreadPool()
-    {
-        for (var i = 0; i < Environment.ProcessorCount; i++)
-        {
-            new Thread(() =>
-                {
-                    while (true)
-                    {
-                        var (workItem, context) = WorkItems.Take();
-                        if (context == null)
-                        {
-                            workItem(null);
-                        }
-                        else
-                        {
-                            ExecutionContext.Run(context, static state => ((Action)state!).Invoke(), workItem);
-                        }
-                    }
-                }) { IsBackground = true }
-                .Start();
-        }
+        Console.Write("Hello");
+        MyTask.Delay(1000)
+            .ContinueWith(() =>
+            {
+                Console.WriteLine(" World.");
+                return MyTask.Delay(2000);
+            })
+            .ContinueWith(() => { Console.WriteLine("How are you?"); })
+            .Wait();
     }
 }

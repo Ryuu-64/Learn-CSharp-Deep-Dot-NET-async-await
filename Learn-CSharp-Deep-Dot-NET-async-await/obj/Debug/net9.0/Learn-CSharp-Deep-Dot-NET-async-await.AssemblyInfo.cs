@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Learn-CSharp-Deep-Dot-NET-async-await")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+869919468a1403e58c5d0ff75a972dae5a483584")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4140c0f6f3cbe0e60efc0b5cebb394bcaf884fc4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Learn-CSharp-Deep-Dot-NET-async-await")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Learn-CSharp-Deep-Dot-NET-async-await")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
