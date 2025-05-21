@@ -1,4 +1,5 @@
-﻿using System.Runtime.ExceptionServices;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 
 namespace Learn_CSharp_Deep_Dot_NET_async_await;
 
@@ -8,6 +9,29 @@ public class MyTask
     private ExecutionContext? _context;
     private Action? _continuation;
     private Exception? _exception;
+
+    public struct Awaiter : INotifyCompletion
+    {
+        private readonly MyTask _task;
+
+        public Awaiter(MyTask task)
+        {
+            _task = task;
+        }
+
+        public Awaiter GetAwaiter() => this;
+
+        public bool IsCompleted => _task.IsCompleted;
+
+        public void OnCompleted(Action continuation)
+        {
+            _task.ContinueWith(continuation);
+        }
+
+        public void GetResult() => _task.Wait();
+    }
+
+    public Awaiter GetAwaiter() => new(this);
 
     public bool IsCompleted
     {
@@ -20,12 +44,12 @@ public class MyTask
         }
     }
 
-    public void SetResult()
+    private void SetResult()
     {
         Complete(null);
     }
 
-    public void SetException(Exception exception)
+    private void SetException(Exception exception)
     {
         Complete(exception);
     }
@@ -68,6 +92,37 @@ public class MyTask
             task.SetResult();
         });
         return task;
+    }
+
+    public static MyTask Run(Func<MyTask> action)
+    {
+        MyTask task = new();
+
+        MyThreadPool.QueueUserWorkItem(RealAction);
+        return task;
+
+        void RealAction()
+        {
+            try
+            {
+                var next = action();
+                next.ContinueWith(() =>
+                {
+                    if (next._exception is not null)
+                    {
+                        task.SetException(next._exception);
+                    }
+                    else
+                    {
+                        task.SetResult();
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                task.SetException(e);
+            }
+        }
     }
 
     public static MyTask Delay(int milliseconds)
@@ -161,10 +216,7 @@ public class MyTask
             catch (Exception e)
             {
                 task.SetException(e);
-                return;
             }
-
-            task.SetResult();
         };
         lock (this)
         {
@@ -209,5 +261,35 @@ public class MyTask
                 });
             }
         }
+    }
+
+    public static MyTask Iterate(IEnumerable<MyTask> tasks)
+    {
+        var task = new MyTask();
+        var enumerator = tasks.GetEnumerator();
+
+        void MoveNext()
+        {
+            try
+            {
+                if (enumerator.MoveNext())
+                {
+                    var next = enumerator.Current;
+                    next.ContinueWith(MoveNext);
+                    return;
+                }
+            }
+            catch (Exception e)
+            {
+                task.SetException(e);
+                return;
+            }
+
+            task.SetResult();
+        }
+
+        MoveNext();
+
+        return task;
     }
 }

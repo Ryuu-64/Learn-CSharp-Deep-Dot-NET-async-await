@@ -1,6 +1,4 @@
-D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\bin\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.exe
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\bin\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.deps.json
-D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\bin\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.runtimeconfig.json
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\bin\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.dll
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\bin\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.pdb
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,6 +8,6 @@ D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.dll
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\refint\Learn-CSharp-Deep-Dot-NET-async-await.dll
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.pdb
-D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.genruntimeconfig.cache
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\ref\Learn-CSharp-Deep-Dot-NET-async-await.dll
 D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.sourcelink.json
+D:\Workspace\CSharpWorkspace\Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await\obj\Debug\net9.0\Learn-CSharp-Deep-Dot-NET-async-await.csproj.AssemblyReference.cache

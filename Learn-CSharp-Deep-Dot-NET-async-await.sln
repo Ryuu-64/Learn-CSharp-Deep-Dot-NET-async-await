@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn-CSharp-Deep-Dot-NET-async-await", "Learn-CSharp-Deep-Dot-NET-async-await\Learn-CSharp-Deep-Dot-NET-async-await.csproj", "{6CDCF136-2BF4-4BE1-BEBC-7F5494C935D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn-CSharp-Deep-Dot-NET-async-await-test", "Learn-CSharp-Deep-Dot-NET-async-await-test\Learn-CSharp-Deep-Dot-NET-async-await-test.csproj", "{FC7DA6A6-20C7-4DDC-804C-4E7A10A6480E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{6CDCF136-2BF4-4BE1-BEBC-7F5494C935D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CDCF136-2BF4-4BE1-BEBC-7F5494C935D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CDCF136-2BF4-4BE1-BEBC-7F5494C935D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7DA6A6-20C7-4DDC-804C-4E7A10A6480E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7DA6A6-20C7-4DDC-804C-4E7A10A6480E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7DA6A6-20C7-4DDC-804C-4E7A10A6480E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7DA6A6-20C7-4DDC-804C-4E7A10A6480E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
