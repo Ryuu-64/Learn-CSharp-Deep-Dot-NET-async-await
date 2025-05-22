@@ -10,30 +10,23 @@ public class MyTask
     private Action? _continuation;
     private Exception? _exception;
 
-    public struct Awaiter : INotifyCompletion
+    public readonly struct Awaiter(MyTask task) : INotifyCompletion
     {
-        private readonly MyTask _task;
-
-        public Awaiter(MyTask task)
-        {
-            _task = task;
-        }
-
         public Awaiter GetAwaiter() => this;
 
-        public bool IsCompleted => _task.IsCompleted;
+        public bool IsCompleted => task.IsCompleted;
 
         public void OnCompleted(Action continuation)
         {
-            _task.ContinueWith(continuation);
+            task.ContinueWith(continuation);
         }
 
-        public void GetResult() => _task.Wait();
+        public void GetResult() => task.Wait();
     }
 
     public Awaiter GetAwaiter() => new(this);
 
-    public bool IsCompleted
+    private bool IsCompleted
     {
         get
         {
